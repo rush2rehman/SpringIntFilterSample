@@ -14,8 +14,10 @@ public class App {
 	
 	public static void main(String... args) throws Exception {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("SpringConfig.xml");
+		QueueSender qs = (QueueSender)ac.getBean("queueSender");
+		qs.send("My Message123234");
 		//CustomerService cs = ac.getBean("customerService", CustomerService.class);
-		System.out.println("Test");
+		//System.out.println("Test");
 	}
 
 	
